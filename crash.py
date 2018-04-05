@@ -1,5 +1,5 @@
-from idl import readsav
+import numpy as np
 
-for j in range(20):
-    s = readsav('struct_arrays_byte_idl80.sav', verbose=False)
-    print(j, s.y.x[0])
+for j in range(200):
+    structure = np.recarray([1], dtype=[(('x', 'X'), np.object_)])
+    structure['x'][0] = np.array([2])
